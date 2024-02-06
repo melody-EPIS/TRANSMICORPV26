@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-s$+-0io(5cg3vqm7o@mw*h^5*1#t#k=4)6qn)tiakyn#*$-rcr
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["Transmicorp02.pythonanywhere.com"]
 
 
 # Application definition
@@ -62,7 +62,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    
+
 ]
 
 ROOT_URLCONF = 'ProyectoTransmicorp.urls'
@@ -70,7 +70,7 @@ ROOT_URLCONF = 'ProyectoTransmicorp.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ["templates"],
+        'DIRS': ["/home/Transmicorp02/Transmicorp-Rep/templates"],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -136,8 +136,8 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
 STATIC_URL = 'static/'
-STATICFILES_DIRS = [os.path.join(BASE_DIR, 'frontend', 'build', 'static'),]
-
+STATICFILES_DIRS = ['/home/Transmicorp02/Transmicorp-Rep/frontend/build/static']
+STATIC_ROOT = [os.path.join(BASE_DIR, 'frontend', 'build', 'static'),]
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
@@ -147,12 +147,12 @@ LOGIN_REDIRECT_URL = 'http://127.0.0.1:8000/'
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
-INTERMAL_IPS = [
-    '127.0.0.1',
+INTERNAL_IPS = [
+    'https://transmicorp02.pythonanywhere.com/',
 ]
 
 def show_toolbar(request):
-    return True
+    return False
 DEBUG_TOOLBAR_CONFIG = {
     "SHOW_TOOLBAR_CALLBACK" : show_toolbar,
 }
